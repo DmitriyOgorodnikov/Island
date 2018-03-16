@@ -30,7 +30,7 @@ public class CreatorWorld {
     Path path = null;
     boolean passLocate = false;
 
-    System.out.println("Введите название файла с картой. Пример: C:\\map.txt");
+    System.out.println("Enter the name of the map file. Example: C:\\map.txt");
     while (!passLocate){
       fileMap = scanner.nextLine();
       path = Paths.get(fileMap);
@@ -38,7 +38,7 @@ public class CreatorWorld {
       if (Files.exists(path)){
         passLocate = true;
       } else {
-        System.out.println("Файл " + fileMap + " не обнаружен. Попробуйте ещё раз.");
+        System.out.println("File " + fileMap + " not found. Try again.");
       }
     }
 
@@ -51,7 +51,7 @@ public class CreatorWorld {
    */
   private void defineSizeMap(){
     boolean passSize = false;
-    System.out.println("Пожалуйста введите размер карты. В начале высоту, а затем, через пробел, ширину");
+    System.out.println("Please enter the map size. At the beginning of the height, and then, spacebar, width");
 
     while (!passSize){
       Scanner scanSizeMap = new Scanner(scanner.nextLine());
@@ -60,13 +60,13 @@ public class CreatorWorld {
         width = scanSizeMap.nextInt() + 2;
 
         if ( (height < 1) || (width > 5000)){
-          System.out.println("Размеры даны не верно.");
+          System.out.println("The dimensions are not given correctly.");
         } else {
           passSize = true;
         }
 
       } catch (Exception e){
-        System.out.println("Размеры даны не верно.");
+        System.out.println("The dimensions are not given correctly.");
       }
     }
   }
@@ -108,7 +108,7 @@ public class CreatorWorld {
             }
           }
         } else {
-          System.out.println("Файл " + path.getFileName() + " не найден");
+          System.out.println("File " + path.getFileName() + " not found");
         }
       } catch (IOException ioe){
         ioe.printStackTrace();

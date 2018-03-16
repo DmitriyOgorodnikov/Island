@@ -14,7 +14,7 @@ public class Explorer {
   }
 
   /*
-   * Исследуем карту и возвращаем число найденых островов
+   * Explore the map and return the number of Islands found
    */
   public int explore(){
     int foundIsland = 0;
@@ -37,7 +37,7 @@ public class Explorer {
   }
 
   /*
-   * Обследование найденых островов
+   * The survey found the Islands
    */
   private void islandExplore(char[][] worldMap, int i, int z){
     String coordinate = translateToCoordinate(i,z);
